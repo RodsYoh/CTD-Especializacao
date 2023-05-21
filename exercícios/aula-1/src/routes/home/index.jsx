@@ -1,11 +1,12 @@
-//import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import axios from "axios";
 import Item from '../../components/Item/Item';
 import './Home.scss';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
 
 export default function Home() {
+    const { nome, cidade } = useContext(MyContext);
     const [itens, setItens] = useState([]);
     useEffect(() => {
       getItens();
@@ -22,6 +23,11 @@ export default function Home() {
 
   return (
       <>
+       <div>
+       <h1>
+        Hello World - Home {nome} - {cidade}
+       </h1>
+       </div>
       <ul className='itemList'>
         {itens.map(item => (
         <Link key={item.id} to={`./product/${item.id}`}>
@@ -38,18 +44,3 @@ export default function Home() {
         </>
   );
 }
-
-// import { useContext } from "react";
-// import { MyContext } from "../../contexts/MyContext";
-
-// export default function Home() {
-//   const { nome, cidade } = useContext(MyContext);
-
-//   return (
-//     <div>
-//       <h1>
-//         Hello World - Home {nome} - {cidade}
-//       </h1>
-//     </div>
-//   );
-// }

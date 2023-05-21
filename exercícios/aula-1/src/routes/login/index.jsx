@@ -10,9 +10,8 @@ export default function Login() {
   const [formData, setFormData] = useState({ email: "", password: "" });
 
   function logar() {
-    /*  alert(JSON.stringify(formData)); */
     changeUserEmail(formData.email);
-    navigate("/");
+    navigate("../home");
   }
 
   return (

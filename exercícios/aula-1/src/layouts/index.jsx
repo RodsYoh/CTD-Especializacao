@@ -1,7 +1,7 @@
 import { Outlet, useNavigate } from "react-router-dom";
 import Header from "./components/header";
 
-export default function Layout() {
+export default function Layout({children}) {
   const navigate = useNavigate();
 
   let isLogged = false;

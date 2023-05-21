@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 export const MyContext = createContext({});
 
-// eslint-disable-next-line react/prop-types
 const MyProvider = ({ children }) => {
   const navigate = useNavigate();
   const [userEmail, setUserEmail] = useState("");
