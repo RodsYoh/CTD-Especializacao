@@ -11,13 +11,13 @@ export default function RoutesConfig() {
     <BrowserRouter>
       <MyProvider>    
       <Routes>
-        <Route path="/login" element={<Login />} >
-          <Route path="/" element={<Layout />} />
+        <Route path="/" element={<Layout />} >
+          <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
           <Route path="/product/:id" element={<Product />} />
           <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>  
+          </Route>
+        </Routes>  
       </MyProvider>
     </BrowserRouter> 
   );

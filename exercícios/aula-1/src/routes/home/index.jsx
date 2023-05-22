@@ -4,6 +4,7 @@ import Item from '../../components/Item/Item';
 import './Home.scss';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
+import { MyContext } from '../../contexts/MyContext';
 
 export default function Home() {
     const { nome, cidade } = useContext(MyContext);
@@ -28,6 +29,7 @@ export default function Home() {
         Hello World - Home {nome} - {cidade}
        </h1>
        </div>
+       <div>
       <ul className='itemList'>
         {itens.map(item => (
         <Link key={item.id} to={`./product/${item.id}`}>
@@ -41,6 +43,7 @@ export default function Home() {
         </Link>
         ))}
         </ul>
+        </div>
         </>
   );
 }

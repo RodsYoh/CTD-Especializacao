@@ -1,14 +1,17 @@
 import { Outlet, useNavigate } from "react-router-dom";
 import Header from "./components/header";
+import { useEffect } from "react";
 
 export default function Layout({children}) {
   const navigate = useNavigate();
 
-  let isLogged = false;
+  useEffect(() => {
+    let isLogged = localStorage.getItem("@user_email");
 
-  if (!isLogged) {
-    navigate("/login");
-  }
+    if (isLogged === undefined) {
+      navigate("/login");
+    }
+  }, []);
 
   return (
     <div>
