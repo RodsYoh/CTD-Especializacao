@@ -11,7 +11,7 @@ export default function Login() {
 
   function logar() {
     changeUserEmail(formData.email);
-    navigate("../home");
+    navigate("/home");
   }
 
   return (
