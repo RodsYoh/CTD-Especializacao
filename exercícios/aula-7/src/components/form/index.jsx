@@ -1,6 +1,7 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
 import getCursos from "../../requests/cursos";
 import { alterarAluno, saveAluno } from "../../requests/alunos";
+import { toast } from "react-toastify"
 
 export default function Form(props){
 
@@ -12,20 +13,20 @@ export default function Form(props){
         refetchOnWindowFocus: false,
     });
 
-    const { mutate, error } = useMutation(saveAluno, {
+    const { mutate } = useMutation(saveAluno, {
         onSuccess: () => {
-            alert('Salvo com sucesso'),
+            toast.success('Salvo com sucesso!'),
             queryClient.invalidateQueries(["@alunos"]);
         },
-        onError: () => alert('Erro ao salvar dados'),
+        onError: () => toast.error('Erro ao salvar dados.'),
     });
 
     const { mutate: editMutate } = useMutation(alterarAluno, {
         onSuccess: () => {
-            alert('Salvo com sucesso'),
+            toast.success('Editado com sucesso!'),
             queryClient.invalidateQueries(["@alunos"]);
         },
-        onError: () => alert('Erro ao salvar dados'),
+        onError: () => toast.error('Erro ao editar dados.'),
     });
 
     function editarAluno(){

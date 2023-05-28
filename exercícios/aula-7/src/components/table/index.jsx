@@ -1,5 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
 import getAlunos, { removerAluno } from "../../requests/alunos"
+import { toast } from "react-toastify"
 
 export default function Table(props){
     const queryClient = useQueryClient();
@@ -11,7 +12,13 @@ export default function Table(props){
         });
     
     const { mutate } = useMutation(removerAluno,{
-        onSuccess: () => queryClient.invalidateQueries(["@alunos"]),
+        onSuccess: () => {
+            queryClient.invalidateQueries(["@alunos"]);
+            toast.success('Apagado com sucesso!');
+        },
+        onError:()=>{
+            toast.error('Erro ao apagar aluno!');
+        }
     });
 
         if (isFetching){
