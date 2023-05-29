@@ -27,17 +27,44 @@ export default function Table(props){
 
     function apagarAluno(id){
         mutate(id);
-        console.log('ok excluir');
     }
 
     function editarCampos(aluno){
         setFormData({ ...aluno, id:aluno._id });
-        console.log('ok editar');
     }
 
     return(
-        <div>
-            <h1>Minha table</h1>
+        <div className="font-opensans">
+            <h1>Minha tabela</h1>
+
+            <table>
+                <thread>
+                    <tr>
+                        <th>Ordem</th>
+                        <th>Nome</th>
+                        <th>Matrícula</th>
+                        <th>Curso</th>
+                        <th>Bimestre</th>
+                        <th>Ações</th>
+                    </tr>
+                </thread>
+                <tbody>
+                   {data.map((aluno)=>(
+                    <><tr>
+                           <td>1</td>
+                           <td>{aluno.nome}</td>
+                           <td>{aluno.matricula}</td>
+                           <td>{aluno.curso}</td>
+                           <td>{aluno.bimestre}</td>
+                       </tr>
+                            <td>
+                               <button>Editar</button>
+                               <button>Excluir</button>
+                           </td></>
+                   ))} 
+                </tbody>
+            </table>
+            {/* <h1>Minha table</h1>
             <ul>
                 {data.map((aluno)=>(
                    <> <li>
@@ -49,7 +76,7 @@ export default function Table(props){
                         <button onClick={()=>apagarAluno(aluno._id)}>Excluir</button>
                     </li></>
                 ))}
-            </ul>
+            </ul> */}
         </div>
-    )
+        );
 }
