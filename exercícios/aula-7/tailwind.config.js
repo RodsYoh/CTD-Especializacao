@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        opensans: ["Open-sans", "sans-serif"],
+        sans: ["Open sans", "sans-serif"],
       },
       colors: {
         danger: "#e74c3c",

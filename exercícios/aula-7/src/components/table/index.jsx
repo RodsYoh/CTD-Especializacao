@@ -34,49 +34,36 @@ export default function Table(props){
     }
 
     return(
-        <div className="font-opensans">
+        <div className="font-sans">
             <h1>Minha tabela</h1>
 
-            <table>
-                <thread>
+            <table className="min-w-full">
+                <thead>
                     <tr>
-                        <th>Ordem</th>
-                        <th>Nome</th>
-                        <th>Matrícula</th>
-                        <th>Curso</th>
-                        <th>Bimestre</th>
-                        <th>Ações</th>
+                        <th className="py-2 px-4 font-semibold text-left">Ordem</th>
+                        <th className="py-2 px-4 font-semibold text-left">Nome</th>
+                        <th className="py-2 px-4 font-semibold text-left">Matrícula</th>
+                        <th className="py-2 px-4 font-semibold text-left">Curso</th>
+                        <th className="py-2 px-4 font-semibold text-left">Bimestre</th>
+                        <th className="py-2 px-4 font-semibold text-left">Ações</th>
                     </tr>
-                </thread>
+                </thead>
                 <tbody>
                    {data.map((aluno)=>(
-                    <><tr>
+                    <><tr className="border-b">
                            <td>1</td>
                            <td>{aluno.nome}</td>
                            <td>{aluno.matricula}</td>
                            <td>{aluno.curso}</td>
                            <td>{aluno.bimestre}</td>
-                       </tr>
                             <td>
-                               <button>Editar</button>
-                               <button>Excluir</button>
-                           </td></>
+                               <button className="bg-sucess text-white text-sm p-2 hover:bg-green-400 transition ease-out delay-50" onClick={()=>editarCampos(aluno)}>Editar</button>
+                               <button className="bg-danger text-white text-sm p-2 hover:bg-red-400 transition ease-out delay-50"onClick={()=>apagarAluno(aluno._id)}>Excluir</button>
+                           </td>
+                    </tr></>
                    ))} 
                 </tbody>
             </table>
-            {/* <h1>Minha table</h1>
-            <ul>
-                {data.map((aluno)=>(
-                   <> <li>
-                        <h4>{aluno.nome}</h4>
-                        <p>{aluno.matricula}</p>
-                        <p>{aluno.curso}</p>
-                        <p>{aluno.bimestre}</p>
-                        <button onClick={()=>editarCampos(aluno)}>Editar</button>
-                        <button onClick={()=>apagarAluno(aluno._id)}>Excluir</button>
-                    </li></>
-                ))}
-            </ul> */}
         </div>
         );
 }
