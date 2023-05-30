@@ -8,7 +8,7 @@ export default function Layout({children}) {
   useEffect(() => {
     let isLogged = localStorage.getItem("@user_email");
 
-    if (isLogged === undefined) {
+    if (isLogged === '') {
       navigate("/login");
     }
   }, []);
