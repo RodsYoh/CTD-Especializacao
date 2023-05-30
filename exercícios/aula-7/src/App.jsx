@@ -29,10 +29,14 @@ function App() {
   return (
     <>
     <QueryClientProvider client={client}>
-      <h1>Diário Eletrônico</h1>
-      <Form formData={formData} setFormData={setFormData} clearState={clearState} />
-      <Table formData={formData} setFormData={setFormData} />
-      <ToastContainer />
+      <div className="min-h-[100vh] p-5">
+        <h1 className="mb-3 text-xl font-bold text-red-500">
+          Diário Eletrônico
+        </h1>
+        <Form formData={formData} setFormData={setFormData} clearState={clearState} />
+        <Table formData={formData} setFormData={setFormData} />
+        <ToastContainer />
+      </div>
     </QueryClientProvider>
     </>
   )
