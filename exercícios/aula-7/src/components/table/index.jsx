@@ -58,7 +58,7 @@ export default function Table(props){
                            <td>{aluno.bimestre}</td>
                             <td>
                                <button className="bg-sucess text-white text-sm p-2 hover:bg-green-400 transition ease-out delay-50" onClick={()=>editarCampos(aluno)}>Editar</button>
-                               <button className="bg-danger text-white text-sm p-2 hover:bg-red-400 transition ease-out delay-50"onClick={()=>apagarAluno(aluno._id)}>Excluir</button>
+                               <button className="bg-danger text-white text-sm p-2 hover:bg-red-400 transition ease-out delay-50" onClick={()=>apagarAluno(aluno._id)}>Excluir</button>
                            </td>
                     </tr></>
                    ))} 

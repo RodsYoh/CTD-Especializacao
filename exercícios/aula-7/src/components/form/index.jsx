@@ -86,7 +86,9 @@ export default function Form(props){
                 onChange={(event) => 
                     setFormData({...formData, bimestre: event.target.value})
                 } />
-            <button onClick={formData.id ? editarAluno : save}>Salvar</button>
+            <button 
+            className="bg-cyan-500 text-white text-sm p-2 hover:bg-blue-400 transition ease-out delay-50"
+            onClick={formData.id ? editarAluno : save}>Salvar</button>
         </div>
     )
 }
