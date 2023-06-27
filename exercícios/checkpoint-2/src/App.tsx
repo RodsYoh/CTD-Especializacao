@@ -1,9 +1,12 @@
-import CharacterList from "./components/characterList";
+import CharacterList from "./components/characterListComponent";
+import HeaderComponent from "./components/headerComponent";
+import HomePage from "./pages/homePage";
 
 function App() {
   return (
     <>
-      <h2>Checkpoint II</h2>
+      <HeaderComponent />
+      <HomePage />
       <CharacterList />
     </>
   );
