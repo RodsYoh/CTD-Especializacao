@@ -16,6 +16,7 @@ const HeaderComponent = () => {
             </ul>
           </nav>
         </div>
+        <hr />
       </header>
     );
   };

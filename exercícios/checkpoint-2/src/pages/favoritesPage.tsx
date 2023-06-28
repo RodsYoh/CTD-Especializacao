@@ -1,4 +1,4 @@
-const FavoritePages = () => {
+const FavoritesPage = () => {
     return (
       <div className="paginacao">
         <button disabled={true} className={"primary"}>
@@ -11,4 +11,4 @@ const FavoritePages = () => {
     );
   };
   
-  export default FavoritePages;
+  export default FavoritesPage;

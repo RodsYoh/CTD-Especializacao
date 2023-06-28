@@ -1,6 +1,17 @@
-import { legacy_createStore } from 'redux';
-import mainReducer from './reducers';
+import { applyMiddleware, combineReducers, legacy_createStore } from "redux";
+import charactersReducer from "./reducers/characters-reducer";
+import createSagaMiddleware from "redux-saga";
+import combineSagas from "./reducers/sagas";
 
-const store = legacy_createStore(mainReducer);
+const sagaMiddleware = createSagaMiddleware();
+
+const reducers = combineReducers({ characterReducer: charactersReducer });
+
+const store = legacy_createStore(reducers, applyMiddleware(sagaMiddleware));
+
+sagaMiddleware.run(combineSagas);
 
 export default store;
+
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch
