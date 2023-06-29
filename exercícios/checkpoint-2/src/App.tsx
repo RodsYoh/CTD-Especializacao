@@ -27,8 +27,10 @@ function App() {
     <>
       <h2>Hello</h2>
       {renderEmpty()}
-      {characters.reults.map((character)=>
-      <h5>character.name</h5>)}
+      {characters.map((character)=>
+      <h5>{character.name}</h5>
+      )
+      }
       <hr />
       <HeaderComponent />
       <HomePage />
