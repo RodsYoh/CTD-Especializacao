@@ -5,7 +5,7 @@ import combineSagas from "./reducers/sagas";
 
 const sagaMiddleware = createSagaMiddleware();
 
-const reducers = combineReducers({ characterReducer: charactersReducer });
+const reducers = combineReducers({ charactersReducer: charactersReducer });
 
 const store = legacy_createStore(reducers, applyMiddleware(sagaMiddleware));
 

@@ -4,8 +4,9 @@ export type Character = {
     name: string;
     status: string;
     species: string;
+    type: string;
     gender: string;
-    origin: string;
     image: string;
+    url: string;
   };
   

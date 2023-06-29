@@ -17,7 +17,7 @@ type ResponseGenerator = {
   };
 
 async function getCharacters(){
-    return await axios.get("https://rickandmortyapi.com/api/characters");
+    return await axios.get("https://rickandmortyapi.com/api/character?page=1");
 }
 
 function* getCharactersSaga(){
@@ -29,4 +29,4 @@ function* getCharactersSaga(){
     }
 }
 
-export default all([takeLatest("GET_CHARACTER", getCharactersSaga)]);
+export default all([takeLatest("GET_CHARACTERS", getCharactersSaga)]);

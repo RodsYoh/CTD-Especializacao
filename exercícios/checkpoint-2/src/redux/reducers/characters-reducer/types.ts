@@ -1,7 +1,8 @@
 import { Character } from "../../../components/characterTypes";
 
 export type State = {
-    characters: Array<Character>,
+        info: Array<string>;
+        results: Array<Character>;
 };
 
 export type Action = {

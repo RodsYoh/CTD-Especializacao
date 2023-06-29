@@ -8,18 +8,19 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 function App() {
-
   const dispatch = useDispatch();
 
-  const { characters } = useSelector<RootState, State>(store=>store.characterReducer);
-  console.log(characters)
-  useEffect(()=>{
-    dispatch({type: "GET_CHARACTER"});
-  },[dispatch]);
+  const { results } = useSelector<RootState, State>(
+    (store) => store.charactersReducer
+  );
+  console.log(results);
+  useEffect(() => {
+    dispatch({ type: "GET_CHARACTERS" });
+  }, [dispatch]);
 
-  function renderEmpty(){
-    if(characters.length<1){
-      return <p>Nenhum personagem encontrado.</p>
+  function renderEmpty() {
+    if (results.length < 1) {
+      return <p>Nenhum personagem encontrado.</p>;
     }
   }
 
@@ -27,10 +28,9 @@ function App() {
     <>
       <h2>Hello</h2>
       {renderEmpty()}
-      {characters.map((character)=>
-      <h5>{character.name}</h5>
-      )
-      }
+      {results.map((character) => (
+        <h5>{character.name}</h5>
+      ))}
       <hr />
       <HeaderComponent />
       <HomePage />
