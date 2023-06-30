@@ -3,7 +3,7 @@ import getCharacters from "../../api"
 export const fetchCharacters= (page) => {
     return async (dispatch) => {
         const response = await getCharacters(page)
-        dispatch({type:"GET_ALL",payload:response.results})
+        dispatch({type:"GET_ALL",payload:response})
     } 
 }
 
