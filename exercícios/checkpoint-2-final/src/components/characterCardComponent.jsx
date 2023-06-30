@@ -1,10 +1,10 @@
 import fullStar from "../images/fullStar.png";
 import emptyStar from "../images/emptyStar.png"
 
-const Card = (character) => {
+function Card(character) {
+  character=character.character
   return (
     <>
-    {console.log(character)}
     <div key={character.id}>
       <img src={character.image} width={100} alt={character.name} />
       <p>{character.name}</p>
@@ -13,6 +13,6 @@ const Card = (character) => {
     </div>
     </>
   );
-};
+}
 
 export default Card;

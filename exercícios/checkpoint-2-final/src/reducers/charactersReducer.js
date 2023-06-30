@@ -1,21 +1,16 @@
-const initialState = {
-    characters:[],
-    error: null
-  };
+// const InitialState = {
+//   characters:[]
+// }
   
-  export const charactersReducer = (state = initialState, action) => {
-    switch (action.type) {
-      case "GET_CHARACTERS_SUCCESS": 
-        return{
-          ...state,
-          characters: action.payload
-              };
-      case "GET_CHARACTERS_ERROR": 
-        return{
-          error: alert('Erro ao buscar personagens!')
-              }
-      default:
-        return state;
-    }
-  };
+//   export const charactersReducer = (state = InitialState, action) => {
+//     switch (action.type) {
+//       case "GET_CHARACTERS_SUCCESS": 
+//         return{
+//           ...state,
+//           characters: action.payload
+//               };
+//       default:
+//         return state;
+//     }
+//   };
   
