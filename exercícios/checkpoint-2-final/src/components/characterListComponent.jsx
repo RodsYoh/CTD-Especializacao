@@ -15,7 +15,7 @@ const CharacterList = () => {
     return (
       <>
         <div style={{ display: "flex", flexWrap: "wrap", gap: "40px" }}>
-          {characters.map((character) => (
+          {characters.results.map((character) => (
             <div key={character.id}>
               <Card character={character} />
             </div>
