@@ -2,21 +2,22 @@
 import fullStar from "../images/fullStar.png";
 import emptyStar from "../images/emptyStar.png"
 
-function FavoriteButton(data){
+function FavoriteButton(char){
     const favorites = localStorage.getItem('Favorites');
-    const pFavorites = JSON.parse(favorites);
 
-    const characterID = data.id;
-    const favorite = pFavorites.includes(characterID)||[];
+    const characterID = char.character.id;
 
+    const favorite = favorites.includes(characterID)||[];
 
     function addFavorite() {
-        const newFavorites = [...pFavorites, characterID]
+        const newFavorites = [...favorites, characterID]
         localStorage.setItem('Favorites', JSON.stringify(newFavorites));
     }
 
-    function deleteFavorite() {
-        const newFavorites = pFavorites.filter((id) => id != characterID);
+    function deleteFavorite(char) {
+        const favorites = localStorage.getItem('Favorites');
+        const characterID = char.character.id;
+        const newFavorites = favorites.filter((id) => id != characterID);
         localStorage.removeItem('Favorites', JSON.stringify(newFavorites));
     }
 

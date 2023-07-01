@@ -16,9 +16,15 @@ const CharacterList = () => {
 
 /////////////////////////////////////////////////////////
 
+  function createFavorites(){
+    if (localStorage.getItem('Favorites')===null){
+      localStorage.setItem('Favorites',[]);
+    }}
+
   const BASE_URL = "https://rickandmortyapi.com/api/";
   
   async function placeholderAPI(page) {
+    createFavorites();
     const response = await axios.get(`${BASE_URL}/character/?page=${page}`);
     return response.data;
   }

@@ -1,13 +1,13 @@
 import FavoriteButton from "./favoriteButton";
 
 function Card(data){
-  data=data.character
+  let char = data.character;
   return (
     <>
-    <div key={data.id}>
-      <img src={data.image} width={100} alt={data.name} />
-      <p>{data.name}</p>
-      <FavoriteButton character={data}/>
+    <div key={char.id}>
+      <img src={char.image} width={100} alt={char.name} />
+      <p>{char.name}</p>
+      <FavoriteButton character={char}/>
     </div>
     </>
   );
