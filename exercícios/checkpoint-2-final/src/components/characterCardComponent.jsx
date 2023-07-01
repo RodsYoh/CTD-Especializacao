@@ -1,15 +1,13 @@
-import fullStar from "../images/fullStar.png";
-import emptyStar from "../images/emptyStar.png"
+import FavoriteButton from "./favoriteButton";
 
-function Card(character) {
-  character=character.character
+function Card(data){
+  data=data.character
   return (
     <>
-    <div key={character.id}>
-      <img src={character.image} width={100} alt={character.name} />
-      <p>{character.name}</p>
-      <button><img width={20} src={fullStar} alt="" /></button>
-      <button><img width={20} src={emptyStar} alt="" /></button>
+    <div key={data.id}>
+      <img src={data.image} width={100} alt={data.name} />
+      <p>{data.name}</p>
+      <FavoriteButton character={data}/>
     </div>
     </>
   );
